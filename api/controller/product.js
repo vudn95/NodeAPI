@@ -9,3 +9,11 @@ export const getProducts = (req, res) => {
         res.json(response)
     })
 }
+
+export const getLengthProducts = (req , res) => {
+    let sql = 'SELECT COUNT(id) FROM Products'
+    db.query(sql, (err, response) => {
+        if(err) throw err
+        res.json(response);
+    })
+}
