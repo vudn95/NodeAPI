@@ -1,7 +1,7 @@
-import {getProducts} from './controller/product';
+import {getGuests} from './controller/guest';
 const routes = (app) => {
-    app.route('/product')
-        .get(getProducts)
+    app.route('/guest')
+        .get(getGuests)
 }
  
 export default routes;
