@@ -10,10 +10,18 @@ export const getProducts = (req, res) => {
     })
 }
 
-export const getItemProducts = (req, response) => {
+export const getItemProducts = (req, res) => {
 	let sql =`SELECT * FROM products WHERE id=${req.params.id}`
-    db.query(sql, (err, res) => {
+    db.query(sql, (err, response) => {
         if(err) throw err
-        response.json(res)
+        res.json(response)
         })
+
+export const getLengthProducts = (req , res) => {
+    let sql = 'SELECT COUNT(id) FROM Products'
+    db.query(sql, (err, response) => {
+        if(err) throw err
+        res.json(response);
+    })
+}
 }
