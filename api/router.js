@@ -1,7 +1,10 @@
-import {getProducts} from './controller/product';
+import {getProducts, getItemProducts} from './controller/product';
+
 const routes = (app) => {
     app.route('/product')
-        .get(getProducts)
+        .get(getProducts);
+
+    app.route('/product/:id').get(getItemProducts);
 }
  
 export default routes;

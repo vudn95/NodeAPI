@@ -8,3 +8,11 @@ export const getProducts = (req, res) => {
         res.json(response)
     })
 }
+
+export const getItemProducts = (req, response) => {
+	let sql =`SELECT * FROM products WHERE id=${req.params.id}`
+    db.query(sql, (err, res) => {
+        if(err) throw err
+        response.json(res)
+        })
+}
