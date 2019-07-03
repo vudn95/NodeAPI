@@ -2,7 +2,7 @@ import mysql from 'mysql';
 const db = mysql.createConnection({
     host: process.env.DB_HOST || "localhost",
     user: process.env.DB_USER || "root",
-    password: process.env.DB_PASSWORD || "vudang95",
-    database: process.env.DB_NAME || "nodejs_api"
+    password: process.env.DB_PASS || "1",
+    database: process.env.DB_NAME || "node_api"
 })
 export default db;
