@@ -1,5 +1,7 @@
 import { getProducts, getLengthProducts } from './controller/product';
 import { insertProducts } from './controller/insertProducts';
+import { getGuests } from './controller/guest';
+import { getAccount } from './controller/account';
 
 const routes = (app) => {
     app.route('/guest')
