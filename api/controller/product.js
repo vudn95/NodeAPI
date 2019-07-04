@@ -1,5 +1,4 @@
-// import mysql from 'mysql';
-import db from './../db';
+import db from '../db';
 
 export const getProducts = (req, res) => {
     let sql = 'SELECT * FROM products'
@@ -10,12 +9,10 @@ export const getProducts = (req, res) => {
     })
 }
 
-export const getLengthProducts = (req, res) => {
-    let sql = `SELECT COUNT(id)
-    FROM products`
+export const getLengthProducts = (req , res) => {
+    let sql = 'SELECT COUNT(id) FROM products'
     db.query(sql, (err, response) => {
-        if (err) throw err
-        // res.status(400);
-        res.json(response)
+        if(err) throw err
+        res.json(response);
     })
 }
