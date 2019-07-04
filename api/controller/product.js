@@ -1,12 +1,10 @@
 import db from '../db';
+import {Product} from '../model/product';
 
 export const getProducts = (req, res) => {
-    let sql = 'SELECT * FROM products'
-    db.query(sql, (err, response) => {
-        if (err) throw err
-        // res.status(400);
-        res.json(response)
-    })
+    Product.findAll().then(products => {
+        res.json(products);
+      });
 }
 
 export const getLengthProducts = (req , res) => {
