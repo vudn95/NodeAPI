@@ -1,6 +1,8 @@
-import { getProducts, getLengthProducts } from './controller/product';
-import { insertProducts } from './controller/insertProducts';
-
+import { getGuests } from "./controller/guest";
+import { getAccount } from "./controller/account";
+import { getProducts, getLengthProducts } from "./controller/product";
+import { postOrder } from "./controller/postOrder";
+import { insertProducts } from "./controller/insertProducts";
 const routes = (app) => {
     app.route('/guest')
         .get(getGuests)
@@ -11,5 +13,7 @@ const routes = (app) => {
 
     app.route('/product/length').get(getLengthProducts)
     app.route('/product/insert/:name&:color&:price').get(insertProducts)
+    app.route("/order").post(postOrder);
+
 }
 export default routes;
