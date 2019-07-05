@@ -16,5 +16,4 @@ export const postOrder = (req, res) => {
     if (err) throw err;
     res.json(response);
   });
-    res.json({});
 };
