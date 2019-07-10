@@ -1,11 +1,11 @@
 // import mysql from 'mysql';
-import db from './../db';
+import db from '../db';
 
 export const getProducts = (req, res) => {
-    let sql = 'SELECT * FROM products'
+    let sql = 'SELECT * FROM Products'
     db.query(sql, (err, response) => {
         if (err) throw err
-        res.status(400);
+        // res.status(400);
         res.json(response)
     })
 }
